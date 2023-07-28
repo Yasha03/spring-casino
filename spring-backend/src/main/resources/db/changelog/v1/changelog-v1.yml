@@ -1,0 +1,42 @@
+#databaseChangeLog:
+#  - includeAll:
+#      path: DDL/
+#      relativeToChangelogFile: true
+
+databaseChangeLog:
+  - include:
+      file: DDL/20230509-CASINO-1-add-extention-uuid.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230511-CASINO-2-init-account-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230513-CASINO-3-init-game-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230513-CASINO-4-init-bet-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230513-CASINO-5-init-bonus-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230513-CASINO-6-add-user-bonus-relation.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230513-CASINO-7-add-bonus-game-relation.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230513-CASINO-8-init-payment-history-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230519-CASINO-9-add-value-in-game.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230519-CASINO-10-init-keno-game-history-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230520-CASINO-11-init-roulette-game-history-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: DDL/20230520-CASINO-12-init-slots-game-history-table.yml
+      relativeToChangelogFile: true

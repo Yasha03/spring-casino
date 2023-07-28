@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: '7-add-bonus-game-relation'
+      author: Ivanov Yakov
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: bonus_game
+      changes:
+        - createTable:
+            tableName: bonus_game
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_bonus_game
+                  defaultValueComputed: uuid_generate_v4()
+              - column:
+                  name: bonus_id
+                  type: uuid
+              - column:
+                  name: game_id
+                  type: uuid
+        - addForeignKeyConstraint:
+            baseColumnNames: [ bonus_id ]
+            baseTableName: bonus_game
+            constraintName: fk_user_bonus_user
+            referencedColumnNames: [ id ]
+            referencedTableName: bonus
+        - addForeignKeyConstraint:
+            baseColumnNames: [ game_id ]
+            baseTableName: bonus_game
+            constraintName: fk_user_bonus_bonus
+            referencedColumnNames: [ id ]
+            referencedTableName: game

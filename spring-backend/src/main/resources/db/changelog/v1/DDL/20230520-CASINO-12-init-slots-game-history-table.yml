@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: '12-init-slots-game-history-table'
+      author: Ivanov Yakov
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: game_slots_history
+      changes:
+        - createTable:
+            tableName: game_slots_history
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_game_slots_history
+                  defaultValueComputed: uuid_generate_v4()
+              - column:
+                  name: created_date
+                  type: TIMESTAMP WITHOUT TIME ZONE
+                  defaultValueComputed: NOW()
+              - column:
+                  name: updated_date
+                  type: TIMESTAMP WITHOUT TIME ZONE
+                  defaultValueComputed: NOW()
+              - column:
+                  name: numbers
+                  type: jsonb
+              - column:
+                  name: bet
+                  type: bigint
+              - column:
+                  name: user_id
+                  type: uuid
+              - column:
+                  name: winning
+                  type: bigint
+              - column:
+                  name: coeff
+                  type: float
+        - addForeignKeyConstraint:
+            baseTableName: game_slots_history
+            baseColumnNames: user_id
+            referencedTableName: account
+            referencedColumnNames: id
+            constraintName: fk_game_slots_history_account

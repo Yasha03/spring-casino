@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: '1-add-uuid-extention'
+      author: 'Ivanov Yakov'
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            endDelimiter: ';'
+            splitStatements: true
+            path: SQL/20230905-CASINO-1-add-extention-uuid.sql
+            relativeToChangelogFile: true

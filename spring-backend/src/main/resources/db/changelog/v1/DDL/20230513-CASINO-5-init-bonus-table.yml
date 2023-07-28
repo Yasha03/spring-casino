@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: '5-init-bonus-table'
+      author: Ivanov Yakov
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: bonus
+      changes:
+        - createTable:
+            tableName: bonus
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_bonus
+                  defaultValueComputed: uuid_generate_v4()
+              - column:
+                  name: created_date
+                  type: TIMESTAMP WITHOUT TIME ZONE
+                  defaultValueComputed: NOW()
+              - column:
+                  name: updated_date
+                  type: TIMESTAMP WITHOUT TIME ZONE
+                  defaultValueComputed: NOW()
+              - column:
+                  name: name
+                  type: VARCHAR(254)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: VARCHAR(1023)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_active
+                  type: boolean
+                  defaultValueBoolean: true
+              - column:
+                  name: start_date
+                  type: TIMESTAMP WITHOUT TIME ZONE
+                  defaultValueComputed: NOW()
+              - column:
+                  name: end_date
+                  type: TIMESTAMP WITHOUT TIME ZONE
+              - column:
+                  name: type
+                  type: VARCHAR(254)

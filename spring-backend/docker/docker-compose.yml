@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  itis-bd-test:
+    container_name: itis_casino_db
+    image: postgres:13
+    ports:
+      - 6666:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: itis_casino_db
+  backend-casino-spring-2:
+    container_name: backend_casino_spring
+    environment:
+      DB_HOST: itis_casino_db
+      DB_PORT: 5432
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    ports:
+      - 8099:8099
+  frontend-casino-react:
+    container_name: frontend_casino_react
+    build:
+      context: ../../front-end-react/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000

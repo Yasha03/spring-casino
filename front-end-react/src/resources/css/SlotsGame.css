@@ -1,0 +1,68 @@
+.game-container{
+    color: white;
+    padding: 20px;
+}
+
+.slots-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.slots-window-item {
+    width: 50px;
+    height: 50px;
+    margin: 0 6px;
+    border: 1px solid #0066cc;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.betSubmit {
+    margin-left: 20px;
+}
+
+.msg-container {
+    background-color: #3c3c3c;
+    width: 200px;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.slots-window-item-lisp{
+    position: absolute;
+    top: 0;
+    /* left: 50%; */
+    /* transform: translate(-50%); */
+}
+
+/* .slots-window-item-lisp-item{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation-item {
+    opacity: 0;
+}
+
+.animation-item-enter {
+    opacity: 1;
+}
+
+.animation-item-enter-active {
+    transform: translateX(-50%) translateY(-100%);
+    transition: transform 1000ms;
+}
+
+.animation-item-enter-done {
+    opacity: 0;
+} */

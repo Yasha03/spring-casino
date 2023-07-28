@@ -1,0 +1,66 @@
+.number-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 500px; 
+  margin: 0 auto; 
+}
+
+.number-row {
+  display: flex;
+  flex-basis: 10%; 
+}
+
+.number-button {
+  width: 35px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #4b4b4b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-grow: 1; 
+  max-width: 40px;
+}
+
+
+.number-button.selected {
+  background-color: rgb(116, 116, 255);
+}
+
+.betInput {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.betInput:focus {
+  border-color: #0066cc;
+}
+
+.betSubmit{
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #55f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.betSubmit:hover {
+  background-color: #33f;
+}
+
+.keno-game-container{
+  padding: 20px;
+  color: white;
+}
+
+.keno-game-title{
+  margin: 0 auto;
+}

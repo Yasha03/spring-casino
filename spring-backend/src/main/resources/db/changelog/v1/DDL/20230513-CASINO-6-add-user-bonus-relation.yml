@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: '6-add-user-bonus-relation'
+      author: Ivanov Yakov
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: user_bonus
+      changes:
+        - createTable:
+            tableName: user_bonus
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_user_bonus
+                  defaultValueComputed: uuid_generate_v4()
+              - column:
+                  name: user_id
+                  type: uuid
+              - column:
+                  name: bonus_id
+                  type: uuid
+        - addForeignKeyConstraint:
+            baseColumnNames: [ user_id ]
+            baseTableName: user_bonus
+            constraintName: fk_user_bonus_user
+            referencedColumnNames: [ id ]
+            referencedTableName: account
+        - addForeignKeyConstraint:
+            baseColumnNames: [ bonus_id ]
+            baseTableName: user_bonus
+            constraintName: fk_user_bonus_bonus
+            referencedColumnNames: [ id ]
+            referencedTableName: bonus

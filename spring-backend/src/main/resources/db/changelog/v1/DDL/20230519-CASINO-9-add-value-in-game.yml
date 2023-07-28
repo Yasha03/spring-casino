@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: '9-add-value-in-game'
+      author: Ivanov Yakov
+      changes:
+        - insert:
+            tableName: game
+            columns:
+              - column:
+                  name: name
+                  value: Кено
+              - column:
+                  name: description
+                  value: Необходимо выбрать 10 чисел из 80
+              - column:
+                  name: game_url
+                  value: /games/keno
+        - insert:
+            tableName: game
+            columns:
+              - column:
+                  name: name
+                  value: Слоты
+              - column:
+                  name: description
+                  value: 3 числа с прокруткой
+              - column:
+                  name: game_url
+                  value: /games/slots
+        - insert:
+            tableName: game
+            columns:
+              - column:
+                  name: name
+                  value: Рулетка
+              - column:
+                  name: description
+                  value: Рулетка, с двумя вариантами - lose, win
+              - column:
+                  name: game_url
+                  value: /games/roulette

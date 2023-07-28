@@ -1,0 +1,5 @@
+export const MAIN_PAGE = '/'
+export const ADMIN_PANEL_ROUTE = '/admin/panel'
+export const LOGIN_ROUTE = '/login'
+export const REGISTER_ROUTE = '/register'
+export const PAYMENT_FORM_ROUTE = '/payment'
